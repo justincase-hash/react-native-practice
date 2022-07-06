@@ -1,15 +1,43 @@
-import { StyleSheet, Text, View, SafeAreaView, Image, TouchableWithoutFeedback, Button, Alert, Platform, StatusBar} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableWithoutFeedback,
+  Button,
+  Alert,
+  Platform,
+  StatusBar,
+  Dimensions
+} from 'react-native';
+ 
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 
-export default function App() {  
-  const handlePress = () => console.log("text pressed");
+export default function App() {   
+
+  const handlePress = () => console.log("text pressed"); 
+  console.log(Dimensions.get("screen")) 
+  console.log(useDimensions()); 
+  console.log(useDeviceOrientation()); 
+  const {landscape} = useDeviceOrientation();
   return ( 
+    
     // style - the most right object overwrites the style of the behind object 
-    <SafeAreaView style={ [styles.container, containerStyle] }>
+    <SafeAreaView style={[styles.container, containerStyle]}>
+      <View
+        style={{
+        backgroundColor: "dodgerblue",
+        width: "100%",
+        height: landscape ? "100%" : "30%",
+      }}></View>
       <Text numberOfLines={1} onPress={handlePress}> Hello React Native. A really long text. I wanna make this really really long text
       Hello React Native. A really long text. I wanna make this really really long text
       </Text> 
-      <Button title="Click Me"
+
+      <Button
+        title="Click Me"
         onPress={() =>
           Alert.alert("My Title", "My Message", [
             { text: "Yes", onPress: () => console.log("yes") },
@@ -18,11 +46,13 @@ export default function App() {
         }    
       /> 
 
-      <Button title="Click Me"
+      <Button
+        title="Click Me"
         onPress={() =>
           Alert.prompt("My Title", "My Message", text => console.log(text))
         }    
       />
+
       <TouchableWithoutFeedback onPress={ () => console.log("test touchable") }>
         <Image 
           blurRadius={10}
@@ -32,9 +62,9 @@ export default function App() {
             height: 300,
             uri : "https://picsum.photos/200/300"
           }}
-        />
+      />
       </TouchableWithoutFeedback>
-      <StatusBar style="auto" />
+      <StatusBar style="auto"/>
     </SafeAreaView>
   );
 }
@@ -44,7 +74,7 @@ const containerStyle = { backgroundColor: "orange" }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
     paddingTop : Platform.OS === "android" ? StatusBar.currentHeight : 0
