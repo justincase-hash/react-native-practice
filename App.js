@@ -21,12 +21,65 @@ export default function App() {
   console.log(Dimensions.get("screen")) 
   console.log(useDimensions()); 
   console.log(useDeviceOrientation()); 
-  const {landscape} = useDeviceOrientation();
+  const { landscape } = useDeviceOrientation();
+  
+
   return ( 
+    <View
+      style={{
+        backgroundColor: "#fff",
+        flex: 1,
+        flexDirection : "row",  
+      }}
     
-    // style - the most right object overwrites the style of the behind object 
-    <SafeAreaView style={[styles.container, containerStyle]}>
-      <View
+    >
+           <View
+            style={{
+              backgroundColor: "dodgerblue",
+              width: 100,
+              height: 100
+            }} 
+          /> 
+          <View
+            style={{
+              backgroundColor: "gold",
+              width: 100,
+              height: 100
+            }} 
+          />
+          <View
+            style={{
+              backgroundColor: "tomato",
+              width: 100,
+              height: 100
+            }} 
+      /> 
+          <StatusBar style="auto" />
+      </View>
+ 
+          
+  
+  );
+}
+
+
+const containerStyle = { backgroundColor: "orange" } 
+// StyleSheet validates the key property of the object.  
+// style can be separated in different file and use import to use the style 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop : Platform.OS === "android" ? StatusBar.currentHeight : 0
+  },
+}); 
+
+
+/* 
+
+ <View
         style={{
         backgroundColor: "dodgerblue",
         width: "100%",
@@ -63,20 +116,7 @@ export default function App() {
             uri : "https://picsum.photos/200/300"
           }}
       />
-      </TouchableWithoutFeedback>
-      <StatusBar style="auto"/>
-    </SafeAreaView>
-  );
-}
-const containerStyle = { backgroundColor: "orange" } 
-// StyleSheet validates the key property of the object.  
-// style can be separated in different file and use import to use the style 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop : Platform.OS === "android" ? StatusBar.currentHeight : 0
-  },
-});
+      </TouchableWithoutFeedback> 
+
+
+*/
