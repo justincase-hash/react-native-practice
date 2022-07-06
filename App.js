@@ -29,7 +29,9 @@ export default function App() {
       style={{
         backgroundColor: "#fff",
         flex: 1,
-        flexDirection : "row",  
+        flexDirection: "row", // horizontal axis
+        justifyContent: "center", // align items in primary(main) axis
+        alignItems: "baseline" //secondary axis
       }}
     
     >
@@ -37,14 +39,15 @@ export default function App() {
             style={{
               backgroundColor: "dodgerblue",
               width: 100,
-              height: 100
+              height: 300,
+              alignSelf: "flex-start"
             }} 
           /> 
           <View
             style={{
               backgroundColor: "gold",
               width: 100,
-              height: 100
+              height: 200
             }} 
           />
           <View
