@@ -31,7 +31,9 @@ export default function App() {
         flex: 1,
         flexDirection: "row", // horizontal axis
         justifyContent: "center", // align items in primary(main) axis
-        alignItems: "baseline" //secondary axis
+        alignItems: "center", // determines the alignment of items within each line
+        alignContent: "center", // determines the alignment of the entire content
+        flexWrap: "wrap"
       }}
     
     >
@@ -39,15 +41,14 @@ export default function App() {
             style={{
               backgroundColor: "dodgerblue",
               width: 100,
-              height: 300,
-              alignSelf: "flex-start"
+              height: 100
             }} 
           /> 
           <View
             style={{
               backgroundColor: "gold",
               width: 100,
-              height: 200
+              height: 100
             }} 
           />
           <View
@@ -56,7 +57,21 @@ export default function App() {
               width: 100,
               height: 100
             }} 
-      /> 
+          /> 
+          <View
+            style={{
+              backgroundColor: "grey",
+              width: 100,
+              height: 100
+            }} 
+          /> 
+          <View
+            style={{
+              backgroundColor: "greenyellow",
+              width: 100,
+              height: 100
+            }} 
+          /> 
           <StatusBar style="auto" />
       </View>
  
