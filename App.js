@@ -13,66 +13,18 @@ import {
 } from 'react-native';
  
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {   
-
-  const handlePress = () => console.log("text pressed"); 
-  console.log(Dimensions.get("screen")) 
-  console.log(useDimensions()); 
-  console.log(useDeviceOrientation()); 
-  const { landscape } = useDeviceOrientation();
-  
-
-  return ( 
-    <View
-      style={{
-        backgroundColor: "#fff",
-        flex: 1,
-        flexDirection: "row", // horizontal axis
-        justifyContent: "center", // align items in primary(main) axis
-        alignItems: "center", // determines the alignment of items within each line
-        alignContent: "center", // determines the alignment of the entire content
-        flexWrap: "wrap"
-      }}
-    
-    >
-           <View
-            style={{
-              backgroundColor: "dodgerblue",
-              width: 100, // can map to width or height
-              height: 100
-            }} 
-          /> 
-          <View
-            style={{
-              backgroundColor: "gold",
-              width: 100, 
-              height: 100, 
-              top: 20,
-              left: 20,
-              position: "absolute"
-            }} 
-          />
-          <View
-            style={{
-              backgroundColor: "tomato",
-              width: 100,
-              height: 100
-            }} 
-          /> 
-          <StatusBar style="auto" />
-      </View>
- 
-          
-  
-  );
+  return (
+    <WelcomeScreen />
+  );      
 }
 
 
-const containerStyle = { backgroundColor: "orange" } 
-// StyleSheet validates the key property of the object.  
-// style can be separated in different file and use import to use the style 
+/* 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -82,10 +34,6 @@ const styles = StyleSheet.create({
     paddingTop : Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
 }); 
-
-
-/* 
-
  <View
         style={{
         backgroundColor: "dodgerblue",
