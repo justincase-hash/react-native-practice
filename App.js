@@ -18,18 +18,17 @@ import ViewImageScreen from './app/screens/ViewImageScreen';
 import AppText from './app/components/AppText'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import AppButton from './app/components/AppButton';
+
 export default function App() {   
-  return ( 
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-      }}> 
-    
-      <AppText>This is react native app</AppText>
-      <MaterialCommunityIcons name="email" size={60} color="dodgerblue" />
-    </View>
+  return (    
+      <View style={{
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center"
+      }}>
+        <AppButton title="Login" onPress={() => console.log("Tapped")}/>
+      </View>
   );      
 }
 

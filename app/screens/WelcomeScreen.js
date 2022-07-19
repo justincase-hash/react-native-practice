@@ -6,13 +6,17 @@ function WelcomeScreen(props) {
         <ImageBackground
                 style={styles.background}
                 source={require('../assets/background.jpg')}>
-            <View style={styles.logoContainer   }>
-            <Image
-                style={styles.logo}
-                source={require('../assets/logo-red.png')} />
-            <Text>Sell What You Don't Need</Text>
+            <View style={styles.logoContainer}>
+                <Image
+                    style={styles.logo}
+                    source={require('../assets/logo-red.png')} 
+                /> 
+                
+                     
             </View>
-            <View style={styles.loginButton}></View>
+            <Text>Sell What You Don't Need</Text>
+            
+            <View style={styles.loginButton}> <ButtonTest/></View>
             <View style={styles.registerButton}></View>
         </ImageBackground>
     );
@@ -22,7 +26,8 @@ const styles = StyleSheet.create({
     background: {
         flex: 1,
         justifyContent: "flex-end",
-        alignItems : "center"
+        alignItems: "center",
+        blurRadius: 6
     },
     logoContainer: {
         position: "absolute",
