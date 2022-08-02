@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 import ListItem from '../components/ListItem';
+import ListItemSeparator from '../components/ListItemSeparator';
 import Screen from '../components/Screen';
 
 const messages = [
@@ -28,7 +29,9 @@ function MessagesScreen(props) {
                 <ListItem 
                     title={item.title} 
                     subTitle={item.description}
-                    image={item.image} /> } />    
+                        image={item.image} />} 
+            ItemSeparatorComponent={ListItemSeparator}    
+                    />    
         </Screen>
     );
 }
